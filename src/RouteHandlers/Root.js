@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux"
+import CategoriesList from "../components/containers/CategoriesList";
+import WishesList from "../components/containers/WishesList";
 
 class Root extends Component {
 
     render() {
         return (
             <div>
-                Hey you!            
+                <CategoriesList />
+                <WishesList />
             </div>
         );
     }
 }
 
-export default Root;
+export default connect()(Root);
