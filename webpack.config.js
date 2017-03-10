@@ -13,7 +13,8 @@ module.exports = {
         publicPath: '/static/'
     },
     devServer: {
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     module: {
         loaders: [

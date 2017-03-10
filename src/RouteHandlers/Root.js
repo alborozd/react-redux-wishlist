@@ -1,18 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux"
-import CategoriesList from "../components/containers/CategoriesList";
-import WishesList from "../components/containers/WishesList";
+import { Provider } from "react-redux";
+import store from "../store";
+
 
 class Root extends Component {
 
     render() {
         return (
-            <div>
-                <CategoriesList />
-                <WishesList />
-            </div>
+            <Provider store={store}>
+                <div>
+                    <div>
+                        Header
+                </div>
+                    {this.props.children}
+                </div>
+            </Provider>
         );
     }
 }
 
-export default connect()(Root);
+export default Root;
