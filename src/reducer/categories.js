@@ -8,8 +8,6 @@ const defaultState = {
 export default (state = defaultState, action) => {
     const { type, payload, error } = action
 
-    console.log("REDUCESR STATE", state);
-
     switch (type) {
        case LOAD_CATEGORIES + START: 
             return { ...state, loading: true };

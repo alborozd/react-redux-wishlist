@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux"
 import { loadCategories } from "../../actions/categories";
 import { loadWishesByCategory } from "../../actions/wishes";
+import { Link } from "react-router"
 
 class CategoriesList extends Component {
 
@@ -17,7 +18,7 @@ class CategoriesList extends Component {
 
         let loadingPanel = this.props.loading ? <div>LOADING...</div> : null;
         
-        let categories = this.props.categories.map(item => <div key={item.id}>{item.name}</div>);
+        let categories = this.props.categories.map(item => <li key={item.id}> <Link to={`category/${item.id}`}>{item.name}</Link></li>);
 
         return (
                <div>
@@ -26,7 +27,9 @@ class CategoriesList extends Component {
                     </button>
                     {loadingPanel}
                     <hr />
-                    {categories}
+                    <ul>
+                        {categories}
+                    </ul>
                </div>
           );
     }

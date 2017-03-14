@@ -20,3 +20,19 @@ export function getWishesByCategory(categoryId) {
         }, 2000);
     })
 }
+
+export function getCategoryById(categoryId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            categoryId = categoryId - 0;
+            let category = getCatrgories().find(item => item.id === categoryId);
+            if (!category) reject();
+            else {
+                category.wishes = []
+                category.wishes = getWishesMock(categoryId);
+
+                resolve(category);
+            }
+        }, 2000);
+    })
+}

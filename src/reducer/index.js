@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import categories from "./categories";
-import wishes from "./wishes"
+import wishes from "./wishes";
+import category from "./category";
 
 export default combineReducers({
     categories,
-    wishes
+    wishes,
+    category
 });
