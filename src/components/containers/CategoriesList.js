@@ -10,21 +10,21 @@ class CategoriesList extends Component {
         categories: []
     }
 
-    loadCategories() {
+    componentDidMount() {
         this.props.loadCategories();
     }
+    
 
     render() {
 
         let loadingPanel = this.props.loading ? <div>LOADING...</div> : null;
         
-        let categories = this.props.categories.map(item => <li key={item.id}> <Link to={`category/${item.id}`}>{item.name}</Link></li>);
+        let categories = this.props
+            .categories
+            .map(item => <li key={item.id}> <Link to={`category/${item.id}`}>{item.name}</Link></li>);
 
         return (
                <div>
-                   <button onClick={() => this.loadCategories()}>
-                       LOAD CategoriesList
-                    </button>
                     {loadingPanel}
                     <hr />
                     <ul>

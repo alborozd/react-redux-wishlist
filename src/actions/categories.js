@@ -30,7 +30,7 @@ export function loadCategory(categoryId) {
             .then(response => {
                 dispatch({
                     type: LOAD_CATEGORY + SUCCESS,
-                    payload: response
+                    payload: { category: response }
                 });
             }).catch(error => {
                 dispatch({

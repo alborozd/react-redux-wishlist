@@ -24,6 +24,10 @@ module.exports = function (_path, NODE_ENV) {
                         path.resolve(_path, "src"),
                     ],
                     test: /\.js$/,
+                },
+                {
+                    test: /\.css$/,
+                    loader: "style-loader!css-loader"
                 }
             ]
         },
